@@ -18,7 +18,7 @@ except FileNotFoundError:
     st.error("File model_weekday.pkl atau model_weekend.pkl tidak ditemukan. Pastikan sudah disimpan di folder yang sama.")
     st.stop()
 
-st.title("Prediksi Volume Kendaraan dengan Feature Importance Lokal")
+st.title("Prediksi Variabel Signifikan Untuk Volume Lalu Lintas")
 
 # =========================
 # Pilih jenis hari
@@ -83,6 +83,7 @@ if st.button("Prediksi"):
     st.subheader("Visualisasi SHAP (Waterfall)")
     shap.plots.waterfall(shap_values[0], show=False)
     st.pyplot(bbox_inches='tight')  # untuk menampilkan chart SHAP
+
 
 
 
