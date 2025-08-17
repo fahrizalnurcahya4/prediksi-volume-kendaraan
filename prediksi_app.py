@@ -12,8 +12,8 @@ import shap
 # Load model
 # =========================
 try:
-    model_weekday = joblib.load(model_weekday.pkl)
-    model_weekend = joblib.load(model_weekend.pkl)
+    model_weekday = joblib.load("model_weekday.pkl")
+    model_weekend = joblib.load("model_weekend.pkl")
 except FileNotFoundError:
     st.error("File model_weekday.pkl atau model_weekend.pkl tidak ditemukan. Pastikan sudah disimpan di folder yang sama.")
     st.stop()
@@ -83,5 +83,6 @@ if st.button("Prediksi"):
     st.subheader("Visualisasi SHAP (Waterfall)")
     shap.plots.waterfall(shap_values[0], show=False)
     st.pyplot(bbox_inches='tight')  # untuk menampilkan chart SHAP
+
 
 
